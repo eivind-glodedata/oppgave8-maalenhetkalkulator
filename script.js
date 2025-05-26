@@ -1,4 +1,4 @@
-console.log('Hello!');
+/*
 function typeText(elementId, text, speed) {
   let i = 0;
   const element = document.getElementById(elementId);
@@ -36,46 +36,79 @@ longe Latio, multosque per annos errabant, acti fatis, maria omnia circum. Tanta
 
 // Usage example:
 // typeText('myElement', 'Hello, world!', 100);
+*/
 
 const userAge = 18;
-// BAR
-/* sjekker om userage er mindre enn 18, og gir respons ut i fra tallet*/
-if (userAge < 18) {
-  console.log('Du kommer ikke inn');
+
+/* BAR */
+/* Sjekker om userAge er mindre enn 18 */
+if (userAge > 18) { 
+    console.log("Du kan ikke komme inn..");
 } else if (userAge === 18) {
-  console.log('Velkommen inn! Bursdagsdrink!');
+    /* Sjekker om userAge er akkurat 18 */
+    console.log("Gratulerer! Du har blitt 18 - gratis bursdagsdrink");
 } else if (userAge > 60 && userAge < 65) {
-  console.log('Senior rabatt på drinker');
+    /* Sjekker om userAge er større enn 60 OG mindre enn 65 */
+    console.log("Senior rabatt på drinker");
 } else if (userAge >= 18) {
-  console.log('Velkommen inn');
+    /* Sjekker om userAge er større enn eller samme som 18 */
+    console.log("Velkommen inn!");
 } else {
-  console.log('Noe er feil med koden');
-}
+    /* Error */
+    console.log("Noe er galt med koden..");
+};
 
-//Førerkort
+/* FØRERKORT */
+/* Sjekker om userAge er større enn eller samme som 18, og gir respons ut i fra tallet */
 if (userAge >= 18) {
-  console.log('Du kan ta førerkortet');
+    console.log ("Du kan ta førerkortet");
 } else {
-  console.log('Du kan ikke ta førerkortet');
-}
+    console.log("Du kan ikke ta førerkort");
+};
 
-const userName = '';
-const userPassword = '';
+//
+//
+
+function login() {
+const userName = "Julie";
+const userPassword = "Julie123";
 let userOnline = false;
-let page = 'Home';
+let page = "Log-in";
 
-if (userName == '' && userPassword == '') {
-  console.log('Du har ikke laget til brukernavn og passord');
-} else if (userName == Julie && userPassword == 'Julie123') {
-  console.log('du har suksessfult logget inn ' + userName + '!');
-  userOnline = true;
-  page = 'Home';
-} else if (userName != 'Julie') {
-  console.log('Brukernavnet er feil, prøv på nytt.');
-} else if (userPassword != 'Julie123') {
-  console.log('Feil passord, prøv på nytt');
-} else if (userName != 'Julie' || userPassword != 'Julie123') {
-  console.log('Brukernavnet og passordet er feil. Prøv på nytt.');
+if (userName == "" && userPassword == "") {
+    console.log("Du har ikke lagt til brukernavn og passord");
+} else if (userName != "Julie") {
+    console.log("Brukernavnet er feil. Prøv på nytt.")
+} else if (userPassword != "Julie123") {
+    console.log("Passord er feil. Prøv på nytt.")
+} else if (userName != "Julie" || userPassword != "Julie123") {
+    console.log("Brukernavnet eller passordet er feil. Prøv på nytt");
+} else if (userName != "Julie" && userPassword != "Julie123") {
+    console.log("Brukernavnet og passordet er feil. Prøv på nytt");
+} else if (userName == "Julie" && userPassword == "Julie123") {
+    console.log("Du har suksesfullt logget inn " + userName + "!")
+    userOnline = true;
+    page = "Home";
+    const loginMessage = document.getElementById("loginMessage");
+    console.log(loginMessage);
+    loginMessage.textContent = "Du har suksesfullt logget inn " + userName + "!"
 } else {
-  console.log('noe er galtmed koden');
+    console.log("Noe er galt med koden..");
+};}
+
+document.getElementById("innlogging").addEventListener("click", login);
+
+function celsiusToFahrenheit () {
+  let degrees = 100;
+  //°F = °C × 9/5 + 32
+  degrees = degrees*(9/5) + 32;
+  console.log("svaret er " + degrees);
 }
+
+function fahrenheitToCelsius () {
+  let degrees = 0;
+  degrees = (degrees - 32)/(9/5);
+  console.log("Svaret er " + degrees);
+}
+
+fahrenheitToCelsius();
