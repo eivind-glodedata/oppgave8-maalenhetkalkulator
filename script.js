@@ -66,8 +66,30 @@ if (userAge >= 18) {
     console.log("Du kan ikke ta førerkort");
 };
 
-//
-//
+//mattemetoder
+/*Math.round(4.7); = 5
+Math.floor(4.7); = 4
+Math.ceil(4.2); = 5
+Math.random(); = Random number between 0 and 1
+Math.pow(2, 3); = 8 (2^3)
+Math.sqrt(16); = 4
+*/
+
+Math.round(4.7);            // 5
+Math.floor(4.7);            // 4
+Math.ceil(4.2);             // 5
+Math.random();              // Random number between 0 and 1
+Math.pow(2, 3);             // 8 (2^3)
+Math.sqrt(16);              // 4
+
+let bigNumber = 123456789012345678901234567890n; // Note the 'n' at the end
+let sum = bigNumber + 10n;                      // BigInt arithmetic
+
+
+let num = Number("42");       // 42
+let float = parseFloat("3.14"); // 3.14
+let int = parseInt("42px");   // 42
+
 
 function login() {
 const userName = "Julie";
@@ -112,3 +134,24 @@ function fahrenheitToCelsius () {
 }
 
 fahrenheitToCelsius();
+
+const teststring = "dette er en teststring";
+//let userInput = prompt("Gi meg et tall");
+//let tall = Number(userInput);
+//let tall2 = parseInt(userInput, 10);
+//console.log("tallet er", userInput);
+//console.log("tallet er med parseInt", tall2);
+console.log("tallet er", teststring);
+console.log(Number.parseInt("456pløkjx"));
+console.log("tilfeldig talle er", Math.random());
+
+//Always validate the input to ensure it’s a valid number, as prompt() returns a string, and invalid conversions will result in NaN (Not-a-Number).
+//Example of validation:
+
+if (!isNaN(teststring)) {
+  console.log("Valid number:", number);
+} else {
+  console.log("Invalid input. Please enter a valid number.");
+}
+
+

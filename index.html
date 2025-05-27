@@ -32,8 +32,66 @@
       <section id="home" class="sectionHero">
         <!-- Hero-section -->
         <h1>Bruk inspiser og se på console</h1>
+        <form>
+
+          <label for="omregningfra">Velg en målenhet å regne fra</label>
+          <select name="enhetsvalgfra" id="enhetsvalgfra">
+            <option value="Celsius">Celsius</option>
+            <option value="Fahrenheit">Fahrenheit</option>
+          </select>
+          <label for="omregningtil">Velg en målenhet å regne til</label>
+          <select name="enhetsvalgtil" id="enhetsvalgtil">
+            <option value="Fahrenheit">Fahrenheit</option>
+            <option value="Celsius">Celsius</option>
+          </select>
+          <button type="submit"></button>
+
+        </form>
         <p id="loginMessage"></p>
         <button id="innlogging">Logg inn</button>
+        <input type="text">
+        <h1>Contact Us</h1>
+        <form action="/submit-form" method="POST">
+            <!-- Text Input -->
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            <br><br>
+    
+            <!-- Email Input -->
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            <br><br>
+    
+            <!-- Password Input -->
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            <br><br>
+    
+            <!-- Radio Buttons -->
+            <label>Gender:</label>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label>
+            <br><br>
+    
+            <!-- Dropdown -->
+            <label for="country">Country:</label>
+            <select id="country" name="country">
+                <option value="norway">Norway</option>
+                <option value="sweden">Sweden</option>
+                <option value="denmark">Denmark</option>
+            </select>
+            <br><br>
+    
+            <!-- Textarea -->
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" cols="50" placeholder="Write your message here"></textarea>
+            <br><br>
+    
+            <!-- Submit Button -->
+            <button type="submit">Submit</button>
+        </form>
       </section>
       <section id="about" class="sectionAbout">
         <!-- Hero-section -->
