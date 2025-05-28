@@ -155,3 +155,40 @@ if (!isNaN(teststring)) {
 }
 
 
+//
+
+console.log("Hello");
+
+const submitButton = document.getElementById("submitButton");
+console.log(submitButton);
+
+submitButton.addEventListener("click", function (event) {
+  console.log("klicked");
+  event.preventDefault();
+
+  const inputNumber = document.getElementById("inputNumber").value;
+  console.log(inputNumber);
+
+  const selectOptions = document.getElementById("selectOptions").value;
+  console.log(selectOptions);
+
+  let amount;
+  let displayResult = document.getElementById("displayResult");
+
+  if (selectOptions === "pickUp") {
+    //do this
+    amount = inputNumber * 10;
+    console.log("Hent", amount, "epler.");
+    displayResult.textContent = "Hent" + amount + " epler";
+   } else if (selectOptions === "deliver"){
+    //do that
+    amount = inputNumber * 11;
+    console.log("Det leveres", amount, "epler.");
+    } else {
+      //do something else
+      console.error("Noe er feil!");
+    }
+
+  });
+
+

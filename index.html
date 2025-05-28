@@ -94,7 +94,38 @@
         </form>
       </section>
       <section id="about" class="sectionAbout">
-        <!-- Hero-section -->
+        <form>
+          <label for="inputText">
+            Skriv navnet ditt
+            <input type="text" name="inputText" id="inputText" placeholder="Eks. Ola Nordmann">
+          </label>
+
+          <label for="inputNumber">
+            Skriv et tall
+            <input type="number" name="inputNumber" id="inputNumber" placeholder="Eks. 1234">
+          </label>
+
+          <label for="inputCheckboxOne">
+            Velg epler
+            <input type="checkbox" name="inputCheckboxOne" id="inputCheckboxOne">
+          </label>
+          <label for="inputCheckboxTwo">
+            Velg bananer
+            <input type="checkbox" name="inputCheckboxTwo" id="inputCheckboxTwo">
+          </label>
+
+          <label for="selectOptions">
+            Velg mellom
+            <select name="selectOptions" id="selectOptions">
+              <option value="pickUp">Hent selv</option>
+              <option value="deliver">Leveranse</option>
+            </select>
+          </label>
+
+          <input type="button" value="Send" id="submitButton">
+          
+        </form>
+        <p id="displayResults"></p>
       </section>
       <section id="product" class="sectionProduct">
         <!-- Hero-section -->
