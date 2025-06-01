@@ -59,7 +59,7 @@ convertButton.addEventListener("click", (event) => {
         }
 
     else {
-        displayResult.innerText = "udefinert";
+        displayResult.innerText = "Denne omregningen er umulig!";
     }
 });
 
@@ -67,7 +67,6 @@ function fahrenheitToCelsius () {
   const inputValue = document.getElementById("inputValue").value;
   let degrees = inputValue;
   degrees = (degrees - 32)/(9/5);
-  console.log("Svaret******************* er " + degrees);
   const displayResult = document.getElementById("displayResult");
   displayResult.innerText = inputValue + " °F er lik " + degrees + " grader Celsius";
 };
@@ -75,13 +74,9 @@ function fahrenheitToCelsius () {
 function celsiusToFahrenheit () {
   const inputValue = document.getElementById("inputValue").value;
   let degrees = inputValue;
-  console.log("the fucking inputted number is  " + degrees);
   //°F = °C × 9/5 + 32
   degrees = degrees*(9/5) + 32;
-  console.log("svaret er " + degrees);
-
   const displayResult = document.getElementById('displayResult');
-
   displayResult.innerText = inputValue + " °C er lik " + degrees + " grader Fahrenheit";
 };
 
