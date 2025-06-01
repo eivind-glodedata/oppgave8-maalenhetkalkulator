@@ -3,7 +3,7 @@
   <!-- Head er kun for nettleser informasjon -->
   <head>
     <title>Målenhet-omregner</title>
-    <link rel="icon" type="image/x-icon" href="images/html.png" />
+    <link rel="icon" type="image/x-icon" href="html.png" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" href="styles.css" />
@@ -22,7 +22,7 @@
           <a class="links" href="#about">
             <li>Om</li>
           </a>
-          <a class="links" href="#product">
+          <a class="links" href="Produkt">
             <li>Produkt</li>
           </a>
         </ul>
@@ -31,108 +31,37 @@
     <main>
       <section id="home" class="sectionHero">
         <!-- Hero-section -->
-        <h1>Bruk inspiser og se på console</h1>
+        <h1>Omregningskalkulator!</h1>
         <form>
-
-          <label for="omregningfra">Velg en målenhet å regne fra</label>
-          <select name="enhetsvalgfra" id="enhetsvalgfra">
+        <label for="inputValue">Skriv inn tallet du vil regne om:</label>
+        <input type="number" id="inputValue" placeholder="f.eks. 123">
+          <label for="convertFrom">Velg en målenhet å regne fra:</label>
+          <select name="convertFrom" id="convertFrom">
             <option value="Celsius">Celsius</option>
             <option value="Fahrenheit">Fahrenheit</option>
+            <option value="Kelvin">Kelvin</option>
+            <option value="centimeter">centimeter</option>
+            <option value="inches">tommer</option>
+            <option value="liter">liter</option>
+            <option value="gallon">gallon</option>
           </select>
-          <label for="omregningtil">Velg en målenhet å regne til</label>
-          <select name="enhetsvalgtil" id="enhetsvalgtil">
+          <label for="convertTo">Velg en målenhet å regne til:</label>
+          <select name="convertTo" id="convertTo">
             <option value="Fahrenheit">Fahrenheit</option>
             <option value="Celsius">Celsius</option>
+            <option value="Kelvin">Kelvin</option>
+            <option value="centimeter">centimeter</option>
+            <option value="inches">tommer</option>
+            <option value="liter">liter</option>
+            <option value="gallon">gallon</option>
           </select>
-          <button type="submit"></button>
-
+          <input type="submit" value="Regn om" id="convertButton">
         </form>
-        <p id="loginMessage"></p>
-        <button id="innlogging">Logg inn</button>
-        <input type="text">
-        <h1>Contact Us</h1>
-        <form action="/submit-form" method="POST">
-            <!-- Text Input -->
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" placeholder="Enter your name" required>
-            <br><br>
-    
-            <!-- Email Input -->
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email" required>
-            <br><br>
-    
-            <!-- Password Input -->
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" placeholder="Enter your password" required>
-            <br><br>
-    
-            <!-- Radio Buttons -->
-            <label>Gender:</label>
-            <input type="radio" id="male" name="gender" value="male">
-            <label for="male">Male</label>
-            <input type="radio" id="female" name="gender" value="female">
-            <label for="female">Female</label>
-            <br><br>
-    
-            <!-- Dropdown -->
-            <label for="country">Country:</label>
-            <select id="country" name="country">
-                <option value="norway">Norway</option>
-                <option value="sweden">Sweden</option>
-                <option value="denmark">Denmark</option>
-            </select>
-            <br><br>
-    
-            <!-- Textarea -->
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="4" cols="50" placeholder="Write your message here"></textarea>
-            <br><br>
-    
-            <!-- Submit Button -->
-            <button type="submit">Submit</button>
-        </form>
-      </section>
-      <section id="about" class="sectionAbout">
-        <form>
-          <label for="inputText">
-            Skriv navnet ditt
-            <input type="text" name="inputText" id="inputText" placeholder="Eks. Ola Nordmann">
-          </label>
-
-          <label for="inputNumber">
-            Skriv et tall
-            <input type="number" name="inputNumber" id="inputNumber" placeholder="Eks. 1234">
-          </label>
-
-          <label for="inputCheckboxOne">
-            Velg epler
-            <input type="checkbox" name="inputCheckboxOne" id="inputCheckboxOne">
-          </label>
-          <label for="inputCheckboxTwo">
-            Velg bananer
-            <input type="checkbox" name="inputCheckboxTwo" id="inputCheckboxTwo">
-          </label>
-
-          <label for="selectOptions">
-            Velg mellom
-            <select name="selectOptions" id="selectOptions">
-              <option value="pickUp">Hent selv</option>
-              <option value="deliver">Leveranse</option>
-            </select>
-          </label>
-
-          <input type="button" value="Send" id="submitButton">
-          
-        </form>
-        <p id="displayResults"></p>
-      </section>
-      <section id="product" class="sectionProduct">
-        <!-- Hero-section -->
+        <p id="displayResult">Resultat:</p>
       </section>
     </main>
     <footer>
       <h4>Laget av Eivind</h4>
     </footer>
-  </body>
+</body>
 </html>

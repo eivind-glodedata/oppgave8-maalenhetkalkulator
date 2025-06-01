@@ -1,194 +1,122 @@
-/*
-function typeText(elementId, text, speed) {
-  let i = 0;
-  const element = document.getElementById(elementId);
+const convertButton = document.getElementById("convertButton");
+const displayResult = document.getElementById("displayResult");
 
-  function type() {
-    if (i < text.length) {
-      element.innerHTML += text.charAt(i);
-      i++;
-      setTimeout(type, speed);
+convertButton.addEventListener("click", (event) => {
+    event.preventDefault();
+    const convertFrom = document.getElementById("convertFrom").value;
+    const convertTo = document.getElementById("convertTo").value;
+    console.log("did we select right? " + convertFrom);
+    console.log("did we select right? " + convertTo);
+    if (convertFrom === "Celsius" && convertTo === "Fahrenheit") {
+        celsiusToFahrenheit();
     }
-  }
+    else if (convertFrom === "Fahrenheit" && convertTo === "Celsius"){
+        fahrenheitToCelsius();
+    }
 
-  type();
-}
+    else if (convertFrom === "Celsius" && convertTo === "Kelvin") {
+        celciusToKelvin();
+    }
 
-typeText(
-  'print',
-  `Arma virumque cano, Troiae qui primus ab oris Italiam, fato profugus, Laviniaque venit
-litora, multum ille et terris iactatus et alto vi superum saevae memorem Iunonis ob iram; multa quoque et bello
-passus, dum conderet urbem, inferretque deos Latio, genus unde Latinum, Albanique patres, atque altae moenia Romae.
-Musa, mihi causas memora, quo numine laeso, quidve dolens, regina deum tot volvere casus insignem pietate virum,
-tot adire labores impulerit. Tantaene animis caelestibus irae?Urbs antiqua fuit, Tyrii tenuere coloni, Karthago,
-Italiam contra Tiberinaque longe ostia, dives opum studiisque asperrima belli; quam Iuno fertur terris magis omnibus
-unam posthabita coluisse Samo; hic illius arma, hic currus fuit; hoc regnum dea gentibus esse, si qua fata sinant,
-iam tum tenditque fovetque. Progeniem sed enim Troiano a sanguine duci audierat, Tyrias olim quae verteret arces;
-hinc populum late regem belloque superbum venturum excidio Libyae: sic volvere Parcas. Id metuens, veterisque memor
-Saturnia belli, prima quod ad Troiam pro caris gesserat Argis--necdum etiam causae irarum saevique dolores
-exciderant animo: manet alta mente repostum iudicium Paridis spretaeque iniuria formae, et genus invisum, et rapti
-Ganymedis honores. His accensa super, iactatos aequore totoTroas, reliquias Danaum atque immitis Achilli, arcebat
-longe Latio, multosque per annos errabant, acti fatis, maria omnia circum. Tantae molis erat Romanam condere gentem!`,
-  100
-);
+    else if (convertFrom === "Kelvin" && convertTo === "Celsius") {
+        KelvinToCelsius();
+    }
 
-//This will create a typing effect where "Hello, world!" is typed out in the element with ID myElement at a speed of 100 milliseconds per character.
+    else if (convertFrom === "Kelvin" && convertTo === "Fahrenheit") {
+        KelvinToFahrenheit ()
+    }
 
-// Usage example:
-// typeText('myElement', 'Hello, world!', 100);
-*/
+    else if (convertFrom === "Fahrenheit" && convertTo === "Kelvin") {
+        FahrenheitToKelvin ()
+    }
 
-const userAge = 18;
+    else if (convertFrom === "centimeter" && convertTo === "Celsius"){
+        displayResult.innerText = "Lengde kan ikke konverteres til temperatur :)"
+    }
 
-/* BAR */
-/* Sjekker om userAge er mindre enn 18 */
-if (userAge > 18) { 
-    console.log("Du kan ikke komme inn..");
-} else if (userAge === 18) {
-    /* Sjekker om userAge er akkurat 18 */
-    console.log("Gratulerer! Du har blitt 18 - gratis bursdagsdrink");
-} else if (userAge > 60 && userAge < 65) {
-    /* Sjekker om userAge er større enn 60 OG mindre enn 65 */
-    console.log("Senior rabatt på drinker");
-} else if (userAge >= 18) {
-    /* Sjekker om userAge er større enn eller samme som 18 */
-    console.log("Velkommen inn!");
-} else {
-    /* Error */
-    console.log("Noe er galt med koden..");
+    else if (convertFrom === "centimeter" && convertTo === "inches") {
+        const inputValue = document.getElementById("inputValue").value;
+        let inches = inputValue/2.54;
+        displayResult.innerText = inputValue + " cm er lik " + inches + " tommer";
+    }
+
+    else if (convertFrom === "inches" && convertTo === "centimeter") {
+        const inputValue = document.getElementById("inputValue").value;
+        let centimeter = inputValue*2.54;
+        displayResult.innerText = inputValue + " tommer er lik " + centimeter + " cm";
+        }
+
+    else if (convertFrom === "liter" && convertTo === "gallon") {
+        const inputValue = document.getElementById("inputValue").value;
+        let gallon = inputValue/3.78541;
+        displayResult.innerText = inputValue + " liter er lik " + gallon + " gallon";
+        }
+
+    else if (convertFrom === "gallon" && convertTo === "liter") {
+        const inputValue = document.getElementById("inputValue").value;
+        let liter = inputValue*3.78541;
+        displayResult.innerText = inputValue + " liter er lik " + liter + " liter";
+        }
+
+    else {
+        displayResult.innerText = "udefinert";
+    }
+});
+
+function fahrenheitToCelsius () {
+  const inputValue = document.getElementById("inputValue").value;
+  let degrees = inputValue;
+  degrees = (degrees - 32)/(9/5);
+  console.log("Svaret******************* er " + degrees);
+  const displayResult = document.getElementById("displayResult");
+  displayResult.innerText = inputValue + " °F er lik " + degrees + " grader Celsius";
 };
-
-/* FØRERKORT */
-/* Sjekker om userAge er større enn eller samme som 18, og gir respons ut i fra tallet */
-if (userAge >= 18) {
-    console.log ("Du kan ta førerkortet");
-} else {
-    console.log("Du kan ikke ta førerkort");
-};
-
-//mattemetoder
-/*Math.round(4.7); = 5
-Math.floor(4.7); = 4
-Math.ceil(4.2); = 5
-Math.random(); = Random number between 0 and 1
-Math.pow(2, 3); = 8 (2^3)
-Math.sqrt(16); = 4
-*/
-
-Math.round(4.7);            // 5
-Math.floor(4.7);            // 4
-Math.ceil(4.2);             // 5
-Math.random();              // Random number between 0 and 1
-Math.pow(2, 3);             // 8 (2^3)
-Math.sqrt(16);              // 4
-
-let bigNumber = 123456789012345678901234567890n; // Note the 'n' at the end
-let sum = bigNumber + 10n;                      // BigInt arithmetic
-
-
-let num = Number("42");       // 42
-let float = parseFloat("3.14"); // 3.14
-let int = parseInt("42px");   // 42
-
-
-function login() {
-const userName = "Julie";
-const userPassword = "Julie123";
-let userOnline = false;
-let page = "Log-in";
-
-if (userName == "" && userPassword == "") {
-    console.log("Du har ikke lagt til brukernavn og passord");
-} else if (userName != "Julie") {
-    console.log("Brukernavnet er feil. Prøv på nytt.")
-} else if (userPassword != "Julie123") {
-    console.log("Passord er feil. Prøv på nytt.")
-} else if (userName != "Julie" || userPassword != "Julie123") {
-    console.log("Brukernavnet eller passordet er feil. Prøv på nytt");
-} else if (userName != "Julie" && userPassword != "Julie123") {
-    console.log("Brukernavnet og passordet er feil. Prøv på nytt");
-} else if (userName == "Julie" && userPassword == "Julie123") {
-    console.log("Du har suksesfullt logget inn " + userName + "!")
-    userOnline = true;
-    page = "Home";
-    const loginMessage = document.getElementById("loginMessage");
-    console.log(loginMessage);
-    loginMessage.textContent = "Du har suksesfullt logget inn " + userName + "!"
-} else {
-    console.log("Noe er galt med koden..");
-};}
-
-document.getElementById("innlogging").addEventListener("click", login);
 
 function celsiusToFahrenheit () {
-  let degrees = 100;
+  const inputValue = document.getElementById("inputValue").value;
+  let degrees = inputValue;
+  console.log("the fucking inputted number is  " + degrees);
   //°F = °C × 9/5 + 32
   degrees = degrees*(9/5) + 32;
   console.log("svaret er " + degrees);
-}
 
-function fahrenheitToCelsius () {
-  let degrees = 0;
-  degrees = (degrees - 32)/(9/5);
-  console.log("Svaret er " + degrees);
-}
+  const displayResult = document.getElementById('displayResult');
 
-fahrenheitToCelsius();
+  displayResult.innerText = inputValue + " °C er lik " + degrees + " grader Fahrenheit";
+};
 
-const teststring = "dette er en teststring";
-//let userInput = prompt("Gi meg et tall");
-//let tall = Number(userInput);
-//let tall2 = parseInt(userInput, 10);
-//console.log("tallet er", userInput);
-//console.log("tallet er med parseInt", tall2);
-console.log("tallet er", teststring);
-console.log(Number.parseInt("456pløkjx"));
-console.log("tilfeldig talle er", Math.random());
+function celciusToKelvin () {
+    // Formula:	0°C + 273.15 = 273,15K
+    const inputValue = document.getElementById("inputValue").value;
+    let Celsius = parseFloat(inputValue);
+    let Kelvin;
+    Kelvin = Celsius + 273.15;
+    const displayResult = document.getElementById("displayResult");
+    displayResult.innerText = Celsius + " °C er lik " + Kelvin + " grader Kelvin";
+};
 
-//Always validate the input to ensure it’s a valid number, as prompt() returns a string, and invalid conversions will result in NaN (Not-a-Number).
-//Example of validation:
+function KelvinToCelsius () {
+    const inputValue = document.getElementById("inputValue").value;
+    const Kelvin = parseFloat(inputValue);
+    let Celsius = Kelvin - 273.15;
+    displayResult.innerText = Kelvin + " °K er lik " + Celsius + " grader Celsius";
+};
 
-if (!isNaN(teststring)) {
-  console.log("Valid number:", number);
-} else {
-  console.log("Invalid input. Please enter a valid number.");
-}
+function KelvinToFahrenheit () {
+//F = (K - 273.15) * 9/5 + 32
+    const inputValue = document.getElementById("inputValue").value;
+    let K = inputValue;
+    let F = (K - 273.15)*(9/5) + 32;
+    displayResult.innerText = K + " °K er lik " + F + " grader Fahrenheit";
+};
 
-
-//
-
-console.log("Hello");
-
-const submitButton = document.getElementById("submitButton");
-console.log(submitButton);
-
-submitButton.addEventListener("click", function (event) {
-  console.log("klicked");
-  event.preventDefault();
-
-  const inputNumber = document.getElementById("inputNumber").value;
-  console.log(inputNumber);
-
-  const selectOptions = document.getElementById("selectOptions").value;
-  console.log(selectOptions);
-
-  let amount;
-  let displayResult = document.getElementById("displayResult");
-
-  if (selectOptions === "pickUp") {
-    //do this
-    amount = inputNumber * 10;
-    console.log("Hent", amount, "epler.");
-    displayResult.textContent = "Hent" + amount + " epler";
-   } else if (selectOptions === "deliver"){
-    //do that
-    amount = inputNumber * 11;
-    console.log("Det leveres", amount, "epler.");
-    } else {
-      //do something else
-      console.error("Noe er feil!");
-    }
-
-  });
+function FahrenheitToKelvin () {
+//K = (F - 32) * 5/9 + 273.15
+//or alternatively K = (F + 459.67) * 5/9
+    const inputValue = document.getElementById("inputValue").value;
+    let F = inputValue;
+    let K = (F - 32)*5/9 + 273.15;
+    displayResult.innerText = inputValue + " °F er lik " + K + " grader Kelvin";
+};
 
 
